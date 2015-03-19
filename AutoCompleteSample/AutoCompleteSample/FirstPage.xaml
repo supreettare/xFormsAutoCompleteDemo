@@ -18,22 +18,25 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <Label Text="Hi"/>
+  <!--<Label Text="Hi"/>-->
+  <StackLayout>
 
-  <!--<controls:AutoCompleteView
-							SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
-							Placeholder="type 'country name'"
-              SearchBackgroundColor="Blue"
-							SearchTextColor = "Yellow"
-							SearchBorderColor = "Yellow"
-							SuggestionBackgroundColor="Green"
-							ShowSearchButton="True"
-							SearchCommand="{Binding SearchCommand}"
-							Suggestions="{Binding Countries, Mode=TwoWay}"
-							SelectedItem ="{Binding SelectedUser.Country}"
-							SelectedCommand = "{Binding CellSelectedCommand}"/>-->
+    <controls:AutoCompleteView
+                Placeholder="type 'country name'"
+                SearchBackgroundColor="Blue"
+                SearchTextColor = "Yellow"
+                SearchBorderColor = "Yellow"
+                SuggestionBackgroundColor="Green"
+                ShowSearchButton="True"
+                SearchCommand="{Binding SearchCommand}"
+                Suggestions="{Binding Countries, Mode=TwoWay}"
+                SelectedItem ="{Binding SelectedUser.Country}"
+                SelectedCommand = "{Binding CellSelectedCommand}"
+                SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}">
+    </controls:AutoCompleteView>
+  </StackLayout>
 
-  <ListView ItemsSource="{Binding Countries, Mode=TwoWay}">
+  <!--<ListView ItemsSource="{Binding Countries, Mode=TwoWay}">
     <ListView.ItemTemplate>
       <DataTemplate>
       <ViewCell>
@@ -41,5 +44,7 @@
       </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-  </ListView>
+  </ListView>-->
+
+
 </ContentPage>

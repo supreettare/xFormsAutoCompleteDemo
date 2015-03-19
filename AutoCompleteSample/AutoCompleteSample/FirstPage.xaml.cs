@@ -57,6 +57,8 @@ namespace AutoCompleteSample
         {
             InitializeComponent();
             this.BindingContext = this; 
+
+            
         }
 
         private void GetCountries()
