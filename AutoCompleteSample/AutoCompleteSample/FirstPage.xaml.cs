@@ -41,11 +41,14 @@ namespace AutoCompleteSample
             {
                 if (_countries == null)
                 {
-                    return GetCountries();
+                    _countries = new ObservableCollection<Country>();
+                    GetCountries();
                 }
                 return _countries;
             }
-            set { _countries = value; }
+            set { _countries = value;
+            OnPropertyChanged("Countries");
+            }
         }
 
         private Command<string> _searchCommand;
@@ -56,13 +59,12 @@ namespace AutoCompleteSample
             this.BindingContext = this; 
         }
 
-        private ObservableCollection<Country> GetCountries()
+        private void GetCountries()
         {
             try
             {
                 var assembly = typeof(FirstPage).GetTypeInfo().Assembly;
-                Stream stream = assembly.GetManifestResourceStream("TewRailtext15.CountriesList.xml");
-                ObservableCollection<Country> countries;
+                Stream stream = assembly.GetManifestResourceStream("AutoCompleteSample.CountriesList.xml");
                 using (var reader = new System.IO.StreamReader(stream))
                 {
                     XmlRootAttribute xRoot = new XmlRootAttribute();
@@ -70,14 +72,12 @@ namespace AutoCompleteSample
                     xRoot.IsNullable = true;
 
                     var serializer = new XmlSerializer(typeof(ObservableCollection<Country>), xRoot);
-                    countries = (ObservableCollection<Country>)serializer.Deserialize(reader);
-
-                    return countries;
+                    Countries = (ObservableCollection<Country>)serializer.Deserialize(reader);
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                //return null;
             }
         }
 
