@@ -20,7 +20,7 @@
 
   <Label Text="Hi"/>
 
-  <controls:AutoCompleteView
+  <!--<controls:AutoCompleteView
 							SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
 							Placeholder="type 'country name'"
               SearchBackgroundColor="Blue"
@@ -31,5 +31,15 @@
 							SearchCommand="{Binding SearchCommand}"
 							Suggestions="{Binding Countries, Mode=TwoWay}"
 							SelectedItem ="{Binding SelectedUser.Country}"
-							SelectedCommand = "{Binding CellSelectedCommand}"/>
+							SelectedCommand = "{Binding CellSelectedCommand}"/>-->
+
+  <ListView ItemsSource="{Binding Countries, Mode=TwoWay}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+      <ViewCell>
+        <Label Text="{Binding CountryName}"/>
+      </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>
