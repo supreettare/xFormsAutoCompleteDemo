@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoCompleteSample.SecondPage">
+  <Grid>
+
+    <!--Create a grid of 5 rows & 3 columns-->
+    <!--Use * to give them equal height & rows--> 
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100" />
+      <RowDefinition Height="100" />
+      <RowDefinition Height="100" />
+      <RowDefinition Height="100" />
+      <RowDefinition Height="100" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <!--Row 1-->
+    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="0" Grid.Column="2" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+
+    <!--Row 2-->
+    <BoxView Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="1" Grid.Column="2" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+
+    <!--Keeping row 3 blank as your example-->
+    <!--Row 4-->
+    <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
+    <BoxView Grid.Row="3" Grid.Column="2" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
+
+    <!--Keeping row 5 blank as your example-->
+  </Grid>
+</ContentPage>

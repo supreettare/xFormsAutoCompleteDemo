@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoCompleteSample.FirstPage"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <!--    this isn't working yet-->
+      <DataTemplate x:Key="SugestionItemTemplate">
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+              <Label Text="{Binding Country}" VerticalOptions="Center" HorizontalOptions="Start" />
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Label Text="Hi"/>
+
+  <controls:AutoCompleteView
+							SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
+							Placeholder="type 'country name'"
+              SearchBackgroundColor="Blue"
+							SearchTextColor = "Yellow"
+							SearchBorderColor = "Yellow"
+							SuggestionBackgroundColor="Green"
+							ShowSearchButton="True"
+							SearchCommand="{Binding SearchCommand}"
+							Suggestions="{Binding Countries, Mode=TwoWay}"
+							SelectedItem ="{Binding SelectedUser.Country}"
+							SelectedCommand = "{Binding CellSelectedCommand}"/>
+</ContentPage>
