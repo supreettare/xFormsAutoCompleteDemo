@@ -2,39 +2,61 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AutoCompleteSample.SecondPage">
-  <Grid>
+  <StackLayout>
+    <ListView x:Name="itemsList" BackgroundColor="White">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid Padding="5, 10, 5, 10">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
 
-    <!--Create a grid of 5 rows & 3 columns-->
-    <!--Use * to give them equal height & rows--> 
-    <Grid.RowDefinitions>
-      <RowDefinition Height="100" />
-      <RowDefinition Height="100" />
-      <RowDefinition Height="100" />
-      <RowDefinition Height="100" />
-      <RowDefinition Height="100" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*" />
-      <ColumnDefinition Width="*" />
-      <ColumnDefinition Width="*" />
-    </Grid.ColumnDefinitions>
+              <!--Label goes in first row of the grid-->
+              <!--Use binding like below if you want to bind the data to a source either in code behind or in View Model-->
+              <!--Text="{Binding CountryName}"-->
 
-    <!--Row 1-->
-    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="0" Grid.Column="2" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
+              <StackLayout Grid.Row="0" Padding="15">
+                <Label Text="98% pff por eliminacion de Celculitis y grasa localizada en 3 areas a elegir.." TextColor="Black" />
+              </StackLayout>
 
-    <!--Row 2-->
-    <BoxView Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="1" Grid.Column="2" BackgroundColor="Blue" HeightRequest="100" WidthRequest="100"/>
 
-    <!--Keeping row 3 blank as your example-->
-    <!--Row 4-->
-    <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
-    <BoxView Grid.Row="3" Grid.Column="2" BackgroundColor="Red" HeightRequest="100" WidthRequest="100"/>
+              <!--For the second row which has an image & labels both we will use a grid again-->
+              <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-    <!--Keeping row 5 blank as your example-->
-  </Grid>
+                <Image Source="sampleImage.jpg" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" HeightRequest="300" WidthRequest="300"/>
+
+
+                <BoxView BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+
+                <!--We are using stack layout for Padding, as Xamarin Forms does not have Margin property yet-->
+                <StackLayout Grid.Row="0" Grid.Column="0" Padding="40, 10, 10, 10">
+                  <Label Text="Red Sample Text"  TextColor="Red" FontSize="25"/>
+                  <Label Text="Green Sample Text"  TextColor="Green" FontSize="25"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="1" Padding="10" VerticalOptions="Center">
+                  <Label Text="98%"  TextColor="Green" FontSize="40"/>
+                </StackLayout>
+
+              </Grid>
+
+            </Grid>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>

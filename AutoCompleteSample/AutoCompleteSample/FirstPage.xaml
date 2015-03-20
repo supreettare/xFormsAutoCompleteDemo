@@ -19,9 +19,9 @@
   </ContentPage.Resources>
 
   <!--<Label Text="Hi"/>-->
-  <StackLayout>
 
-    <controls:AutoCompleteView
+
+  <!--<controls:AutoCompleteView
                 Placeholder="type 'country name'"
                 SearchBackgroundColor="Blue"
                 SearchTextColor = "Yellow"
@@ -33,18 +33,8 @@
                 SelectedItem ="{Binding SelectedUser.Country}"
                 SelectedCommand = "{Binding CellSelectedCommand}"
                 SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}">
-    </controls:AutoCompleteView>
-  </StackLayout>
+    </controls:AutoCompleteView>-->
 
-  <!--<ListView ItemsSource="{Binding Countries, Mode=TwoWay}">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-      <ViewCell>
-        <Label Text="{Binding CountryName}"/>
-      </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>-->
-
+  
 
 </ContentPage>

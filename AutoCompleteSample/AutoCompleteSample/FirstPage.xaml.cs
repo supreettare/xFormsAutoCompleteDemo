@@ -57,7 +57,7 @@ namespace AutoCompleteSample
         {
             InitializeComponent();
             this.BindingContext = this; 
-
+            
             
         }
 

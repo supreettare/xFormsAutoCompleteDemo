@@ -12,7 +12,7 @@ namespace AutoCompleteSample
         public App()
         {
             // The root page of your application
-            MainPage = new FirstPage();
+            MainPage = new SecondPage();
         }
 
         protected override void OnStart()
